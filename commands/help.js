@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
         )
         .setTitle(`Voici les command de ${client.user.username}`)
         .setColor('#EF8FB5')
-        .setDescription('**Sélectionne la catégorie de commande que tu veux**\n```yaml\n∙ Autre ➜ 3\n∙ Information ➜ 4\n∙ Modération ➜ 1\n```')
+        .setDescription('**Sélectionne la catégorie de commande que tu veux**\n```yaml\n∙ Autre ➜ 3\n∙ Information ➜ 6\n∙ Modération ➜ 1\n```')
         .addFields(
             { name: 'Liens', value: `- [Serveur Support](${config.support})`, inline: true },
         )
@@ -47,6 +47,8 @@ module.exports.run = async (client, message, args) => {
         .addFields(
             { name: `${config.prefix}botinfo`, value: 'Permet d\'afficher des information sur le bot', inline: true },
             { name: `${config.prefix}channelinfo`, value: 'Permet d\'afficher des information sur un salon', inline: true },
+            { name: `${config.prefix}inviteinfo`, value: 'Permet d\'afficher des information sur un liens d\'invitation', inline: true },
+            { name: `${config.prefix}roleinfo`, value: 'Permet d\'afficher des informations sur un rôles', inline: true },
             { name: `${config.prefix}serverinfo`, value: 'Permet d\'afficher des informations sur le serveur', inline: true },
             { name: `${config.prefix}userinfo`, value: 'Permet d\'afficher des informations sur un membre', inline: true}
         )
