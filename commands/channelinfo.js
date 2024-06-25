@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -40,7 +40,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'channelinfo', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.general}・**__Informations géneral__**`)
+        .setTitle(`${emoji.general}・**__Informations géneral__**`)
         .setFields(
             { name: 'Nom', value: `**${channel} \`${channel.name}\`**`},
             { name: 'ID', value: `**\`${channel.id}\`**`},
@@ -56,7 +56,7 @@ module.exports.run = async (client, message, args) => {
         )
 
     const tech = new Discord.EmbedBuilder()
-        .setTitle(`${emoji.bot.config}・**__Informations avancé__**`)
+        .setTitle(`${emoji.config}・**__Informations avancé__**`)
         .setFields(
             { name: 'Mode lent', value: `**\`${parseInt(channel.rateLimitPerUser) !== 0 ? time(parseInt(channel.rateLimitPerUser)) : "Désactiver"}\`**`},
             { name: 'NSFW', value: `**\`${channel.nsfw ? "Oui" : 'Non'}\`**` }
@@ -74,8 +74,8 @@ module.exports.run = async (client, message, args) => {
            .setPlaceholder('Choisissez une option')
            .setDisabled(state)
            .addOptions(
-                { label: 'Général', value: 'general', emoji: emoji.bot.general, description: 'Affiche les informations général du salon' },
-                { label: 'Technique', value: 'tech', emoji: emoji.bot.config, description: 'Affiche les informations technique du salon'  }
+                { label: 'Général', value: 'general', emoji: emoji.general, description: 'Affiche les informations général du salon' },
+                { label: 'Technique', value: 'tech', emoji: emoji.config, description: 'Affiche les informations technique du salon'  }
             )
         )
     ]

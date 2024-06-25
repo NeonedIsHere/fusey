@@ -1,6 +1,6 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, Invite, Component } = require("discord.js")
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, Invite, Component, ButtonStyle } = require("discord.js")
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
     
@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
             name: `Inviter ${client.user.username}`,
             iconURL: client.user.displayAvatarURL()
         })
-        .setTitle("Invitation du bot")
+        .setTitle(`${emoji.link}・**__Liens utiles__**`)
         .setDescription(`Pour inviter le bot, vous pouvez cliquer **[ici](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)** ou cliquez sur le bouton **\`Inviter le bot\`**. Vous avez également la possibilité de rejoindre le serveur support en cliquant **[ici](${config.support})** ou en cliquant sur le bouton **\`Serveur Support\`**`)
         .setColor('#EF8FB5')
         .setTimestamp()
@@ -20,14 +20,14 @@ module.exports.run = async (client, message, args) => {
     const Row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
             .setLabel("Inviter le bot")
-            .setStyle("Link")
+            .setStyle(ButtonStyle.Link)
             .setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`)
-            .setEmoji(emoji.bot.link),
+            .setEmoji(emoji.link),
         new ButtonBuilder()
             .setLabel("Serveur support")
-            .setStyle('Link')
+            .setStyle(ButtonStyle.Link)
             .setURL(config.support)
-            .setEmoji(emoji.bot.support)
+            .setEmoji(emoji.support)
     )
     message.reply({ embeds: [embed], components: [Row]})
 }

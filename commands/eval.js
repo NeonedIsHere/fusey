@@ -1,5 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../config.json');
+const emoji = require('../emoji/utils/bot.json');
+const { e } = require('unocss');
 
 module.exports.run = async (client, message, args) => {
     if (!config.devId.includes(message.author.id)) {
@@ -25,22 +27,36 @@ module.exports.run = async (client, message, args) => {
         }
 
         const embed = new EmbedBuilder()
-            .setColor('Green')
-            .setTitle('Évaluation réussie')
+            .setAuthor(
+                { name: 'eval', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
+            )
+            .setColor('#00FF00')
+            .setTitle(`${emoji.oui}・**__Évaluation réussie__**`)
             .addFields(
                 { name: 'Entrée', value: `\`\`\`js\n${code}\n\`\`\`` },
                 { name: 'Sortie', value: isJson ? `\`\`\`json\n${jsonString}\n\`\`\`` : `\`\`\`js\n${evaled}\n\`\`\`` }
-            );
+            )
+            .setTimestamp()
+            .setFooter(
+                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            )
 
-        message.channel.send({ embeds: [embed] });
+        message.channel.send({ embeds: [embed] })
     } catch (err) {
         const embed = new EmbedBuilder()
-            .setColor('Red')
-            .setTitle('Erreur')
+            .setAuthor(
+                { name: 'eval', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
+            )
+            .setColor('#FF0000')
+            .setTitle(`${emoji.non}・**__Erreur__**`)
             .addFields(
                 { name: 'Entrée', value: `\`\`\`js\n${args.join(' ')}\n\`\`\`` },
                 { name: 'Erreur', value: `\`\`\`js\n${err}\n\`\`\`` }
-            );
+            )
+            .setTimestamp()
+            .setFooter(
+                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            )
 
         message.channel.send({ embeds: [embed] });
     }

@@ -1,6 +1,6 @@
 const { PermissionsBitField, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, time, Embed, ChannelType, RouteBases, ComponentType, VoiceChannel } = require('discord.js')
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: 'clearuser - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.non}・**__Vous n'avez pas les permsissions nécessaire pour effectuer la commande__**`)
+            .setTitle(`${emoji.non}・**__Vous n'avez pas les permsissions nécessaire pour effectuer la commande__**`)
             .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setFields(
                 { name: 'Permission(s) manquante', value: `\`\`\`yaml\n- Gérer les message\n- Rendre muet les membres\`\`\`` }
@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
 
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -40,7 +40,7 @@ module.exports.run = async (client, message, args) => {
                 .setAuthor(
                     { name: `clearuser - error`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
-                .setTitle(`${emoji.bot.non}・**__Vous devez mentionner un utilisateur__**`)
+                .setTitle(`${emoji.non}・**__Vous devez mentionner un utilisateur__**`)
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setColor('#FF0000')
                 .setTimestamp()
@@ -50,7 +50,7 @@ module.exports.run = async (client, message, args) => {
 
             const flopButton = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setEmoji(emoji.bot.support)
+                    .setEmoji(emoji.support)
                     .setLabel('support')
                     .setStyle(ButtonStyle.Link)
                     .setURL(config.support)
@@ -70,7 +70,7 @@ module.exports.run = async (client, message, args) => {
                 .setAuthor(
                     { name: 'clearuser - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
-                .setTitle(`${emoji.bot.non}・**__Cet utilisateur n'existe pas__**`)
+                .setTitle(`${emoji.non}・**__Cet utilisateur n'existe pas__**`)
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setColor('#FF0000')
                 .setTimestamp()
@@ -80,7 +80,7 @@ module.exports.run = async (client, message, args) => {
 
             const flopButton = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setEmoji(emoji.bot.support)
+                    .setEmoji(emoji.support)
                     .setLabel('support')
                     .setStyle(ButtonStyle.Link)
                     .setURL(config.support)
@@ -97,7 +97,7 @@ module.exports.run = async (client, message, args) => {
                 .setAuthor(
                     { name: 'clearuser - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
-                .setTitle(`${emoji.bot.non}・**__Vous ne pouvez pas supprimez vos propre message__**`)
+                .setTitle(`${emoji.non}・**__Vous ne pouvez pas supprimez vos propre message__**`)
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setColor('#FF0000')
                 .setTimestamp()
@@ -107,7 +107,7 @@ module.exports.run = async (client, message, args) => {
 
             const flopButton = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setEmoji(emoji.bot.support)
+                    .setEmoji(emoji.support)
                     .setLabel('support')
                     .setStyle(ButtonStyle.Link)
                     .setURL(config.support)
@@ -123,7 +123,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: `clearuser - ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.question}・**__Voulez vous supprimer tout les messages de ${user.username} sur le serveur ?__**`)
+            .setTitle(`${emoji.question}・**__Voulez vous supprimer tout les messages de ${user.username} sur le serveur ?__**`)
             .setDescription("Merci de confirmer votre choix avec les boutons si dessous avant de continuer")
             .setColor('#ffb000')
             .setTimestamp()
@@ -133,7 +133,7 @@ module.exports.run = async (client, message, args) => {
 
         const yesButton = new ButtonBuilder()
             .setCustomId('confirm_button')
-            .setEmoji(emoji.bot.oui)
+            .setEmoji(emoji.oui)
             .setStyle(ButtonStyle.Success)
             .setDisabled(false)
             .setLabel('Confirmer')
@@ -146,7 +146,7 @@ module.exports.run = async (client, message, args) => {
 
         const noButton = new ButtonBuilder()
             .setCustomId('cancel_button')
-            .setEmoji(emoji.bot.non)
+            .setEmoji(emoji.non)
             .setStyle(ButtonStyle.Danger)
             .setDisabled(false)
             .setLabel('Annuler')
@@ -173,7 +173,7 @@ module.exports.run = async (client, message, args) => {
                         .setAuthor(
                             { name: `clearuser - ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true}) }
                         )
-                        .setTitle(`${emoji.bot.info}・**__Suppression des message en cours__**...`)
+                        .setTitle(`${emoji.info}・**__Suppression des message en cours__**...`)
                         .setDescription(`Merci de patienter quelques instant, les messages de ${user} seront bientôt tous supprimer`)
                         .setColor('#00ABFF')
                         .setTimestamp()
@@ -203,7 +203,7 @@ module.exports.run = async (client, message, args) => {
                             .setAuthor(
                                 { name: `clearuser - ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                             )
-                            .setTitle(`${emoji.bot.oui}・**__Suppression des message de ${user.username} effectuée avec succès__**`)
+                            .setTitle(`${emoji.oui}・**__Suppression des message de ${user.username} effectuée avec succès__**`)
                             .setDescription(`Tout les message de ${user} on été correcter supprimer du serveur`)
                             .setColor('#00ff00')
                             .setTimestamp()
@@ -224,7 +224,7 @@ module.exports.run = async (client, message, args) => {
                     .setAuthor(
                         { name: 'clearuser - annuler', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                     )
-                    .setTitle(`${emoji.bot.non}・**__Suppression des messages annuler__**`)
+                    .setTitle(`${emoji.non}・**__Suppression des messages annuler__**`)
                     .setDescription(`Les messages de ${user} ne seront pas supprimés`)
                     .setColor('#FF0000')
                     .setTimestamp()

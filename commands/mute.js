@@ -1,6 +1,6 @@
 const { PermissionsBitField, EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require('discord.js');
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
     const member = message.mentions.members.first()
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'mute', iconURL: client.user.displayAvatarURL() }
         )
-       .setTitle(`${emoji.bot.non} ∙ **__Erreur__**`)
+       .setTitle(`${emoji.non} ∙ **__Erreur__**`)
        .setDescription(`Impossible de mute ${member} pour la raison suivante : Vous ne possedez pas la permission \`Bannir des membre\``)
        .setColor('Random')
        .setTimestamp()
@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'mute', iconURL: client.user.displayAvatarURL() }
         )
-        .setTitle(`${emoji.bot.non} ∙ **__Erreur__**`)
+        .setTitle(`${emoji.non} ∙ **__Erreur__**`)
         .setDescription(`Impossible de mute ${member} pour la raison suivante : \`Vous n'avez pas mentionner de membre valide\``)
         .setColor('Random')
         .setTimestamp()
@@ -50,7 +50,7 @@ module.exports.run = async (client, message, args) => {
        .setAuthor(
             { name: 'mute', iconURL: client.user.displayAvatarURL() }
         )
-       .setTitle(`${emoji.bot.non} ∙ **__Erreur__**`)
+       .setTitle(`${emoji.non} ∙ **__Erreur__**`)
        .setDescription(`Impossible de mute ${member} pour la raison suivante : \`Vous ne pouvez pas bannir un membre ayant un rôle supperieur ou égal a vous.\``)
        .setColor('Random')
        .setTimestamp()
@@ -62,7 +62,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'mute', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.non} ∙ **__Erreur__**`)
+        .setTitle(`${emoji.non} ∙ **__Erreur__**`)
         .setDescription(`Impossible de mute ${member} pour la raison suivante : \`Vous n'avez pas séléction de durée valide\``)
         .setColor('Random')
         .setTimestamp()
@@ -74,7 +74,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'mute', iconURL: client.user.displayAvatarURL() }
         )
-        .setTitle(`${emoji.bot.non} ∙ **__Erreur__**`)
+        .setTitle(`${emoji.non} ∙ **__Erreur__**`)
         .setDescription(`Une erreur est survenue lors de la tentative de bannissement de ${member}, merci réessayer. Si l'erreur persiste, merci de nous le signaler sur le support que vous pouvez rejoindre en cliquant [ici](${config.support}) ou en cliquant sur le bouton ci-dessous.`)
         .setColor('Random')
         .setTimestamp()

@@ -1,5 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder } = require('discord.js');
-const emoji = require('../emoji.json');
+const emoji = require('../emoji/utils/bot.json');
 const config = require('../config.json');
 
 module.exports.run = async (client, message, args) => {
@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
 
         const embedNop = new EmbedBuilder()
             .setAuthor({ name: `userinfo ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-            .setTitle(`${emoji.bot.non} Cet utilisateur n'existe pas`)
+            .setTitle(`${emoji.non} Cet utilisateur n'existe pas`)
             .setDescription(`Merci de mentionner un utilisateur valide. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#ff0000')
             .setTimestamp()
@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
         const ButtonSupport = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setLabel('Support')
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
         );
@@ -61,13 +61,13 @@ module.exports.run = async (client, message, args) => {
 
         const userinfo = new EmbedBuilder()
             .setAuthor({ name: `userinfo ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-            .setTitle(`${emoji.bot.membre}・**__Informations sur l'utilisateur__**`)
+            .setTitle(`${emoji.membre}・**__Informations sur l'utilisateur__**`)
             .addFields(
                 { name: 'Nom', value: `**${user} \`@${user.username}\`**`, inline: true },
                 { name: 'ID', value: `**\`${user.id}\`**`, inline: false },
                 { name: 'Badge', value: UserBadges, inline: true },
                 { name: 'Date de création', value: `**<t:${parseInt(user.createdTimestamp / 1000)}:f> (<t:${parseInt(user.createdTimestamp / 1000)}:R>)**` },
-                { name: 'Bot', value: user.bot ? `**${emoji.bot.oui} \`Oui\`**` : `**${emoji.bot.non} \`Non\`**` },
+                { name: 'Bot', value: user.bot ? `**${emoji.oui} \`Oui\`**` : `**${emoji.non} \`Non\`**` },
                 { name: "Autre", value: `**\`🧨 Utilisateur du bot\`**` }
             )
             .setColor("#EF8FB5")
@@ -78,7 +78,7 @@ module.exports.run = async (client, message, args) => {
 
         const userServerInfo = new EmbedBuilder()
             .setAuthor({ name: `userinfo - ${user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-            .setTitle(`${emoji.bot.support}`)
+            .setTitle(`${emoji.support}`)
             .addFields(
                 { name: 'Pseudo de serveur', value: member.nickname ? `**\`${member.nickname}\`**` : '**`Aucun`**', inline: true },
                 { name: 'Rejoins', value: `**<t:${parseInt(member.joinedTimestamp / 1000)}:f> (<t:${parseInt(member.joinedTimestamp / 1000)}:R>)**` }
@@ -104,8 +104,8 @@ module.exports.run = async (client, message, args) => {
                     .setDisabled(state)
                     .setPlaceholder('Choisissez la page')
                     .addOptions([
-                        { label: 'Utilisateur', value: 'userinfo', emoji: emoji.bot.membre },
-                        { label: 'Serveur', value: 'serveruserinfo', emoji: emoji.bot.support }
+                        { label: 'Utilisateur', value: 'userinfo', emoji: emoji.membre },
+                        { label: 'Serveur', value: 'serveruserinfo', emoji: emoji.support }
                     ])
             )
         ];

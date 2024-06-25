@@ -1,5 +1,5 @@
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, ActionRowBuilder, time } = require('discord.js')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
     const guild = message.guild
@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
     const serverinfo = new EmbedBuilder()
         .setAuthor({ name: `serveinfo - ${guild.name}`, iconURL: client.user.displayAvatarURL() })
-        .setTitle(`${emoji.bot.info}・**__Informations__**`)
+        .setTitle(`${emoji.info}・**__Informations__**`)
         .setColor('#EF8FB5')
         .setThumbnail(guild.iconURL({ dynamic: true }))
         .setImage(guild.bannerURL({ dynamic: true, size: 2048 }))
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
 
     const serverstats = new EmbedBuilder()
         .setAuthor({ name: `serveinfo - ${guild.name}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-        .setTitle(`${emoji.bot.support}・**__Statistiques__**`)
+        .setTitle(`${emoji.support}・**__Statistiques__**`)
         .setFields(
             { name: 'Membres', value: `**\`${guild.memberCount} au total\` \`(${guild.presences.cache.filter((presence) => presence.status !== 'offline').size} en ligne)\`**` },
             { name: 'Niveau de boost', value: `**\`Tiers ${guild.premiumTier}\` \`(${guild.premiumSubscriptionCount} boost)\`**` },
@@ -55,8 +55,8 @@ module.exports.run = async (client, message, args) => {
                 .setCustomId('serverinfo-menu')
                 .setDisabled(state)
                 .setOptions(
-                    { label: 'Information', value: 'serverinfo', emoji: emoji.bot.info },
-                    { label: 'Statistique', value: 'serverstats', emoji: emoji.bot.support }
+                    { label: 'Information', value: 'serverinfo', emoji: emoji.info },
+                    { label: 'Statistique', value: 'serverstats', emoji: emoji.support }
                 )
         )
     }

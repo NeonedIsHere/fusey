@@ -1,5 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 const config = require('../config.json')
 
 module.exports.run = async (client, message, args) => {
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: 'clearrole - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`**${emoji.bot.non}・__Vous devez être le propriétaire pour executer la commande__**`)
+            .setTitle(`**${emoji.non}・__Vous devez être le propriétaire pour executer la commande__**`)
             .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#FF0000')
             .setTimestamp()
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
         
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('Support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -36,7 +36,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: 'clearrole - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.non}・**__Veuillez mentionner un rôle ou indiquer un nom de salon__**`)
+            .setTitle(`${emoji.non}・**__Veuillez mentionner un rôle ou indiquer un nom de salon__**`)
             .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#FF0000')
             .setTimestamp()
@@ -46,7 +46,7 @@ module.exports.run = async (client, message, args) => {
 
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('Support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: 'clearrole - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.non}・**__Aucun rôle trouvé avec ce nom__**`)
+            .setTitle(`${emoji.non}・**__Aucun rôle trouvé avec ce nom__**`)
             .setDescription(`Vous devez envoyer une invitation. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#FF0000')
             .setTimestamp()
@@ -74,7 +74,7 @@ module.exports.run = async (client, message, args) => {
 
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('Support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -88,7 +88,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: `clearrole - ${rolename}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.info}・**__Suppressions de ${rolesToDelete.size} rôle(s) en cours__...**`)
+        .setTitle(`${emoji.info}・**__Suppressions de ${rolesToDelete.size} rôle(s) en cours__...**`)
         .setDescription(`Un total de **\`${rolesToDelete.size}\`** ayant pour nom **\`${rolename}\`** sont en cours de suppressions`)
         .setColor('#00ABFF')
         .setTimestamp()
@@ -110,7 +110,7 @@ module.exports.run = async (client, message, args) => {
                     .setAuthor(
                         { name: 'clearrole - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                     )
-                    .setTitle(`${emoji.bot.non}・**__Une erreur est survenu__**`)
+                    .setTitle(`${emoji.non}・**__Une erreur est survenu__**`)
                     .setFields(
                         { name: 'Description de l\'erreur', value: `\`\`\`${erreur}\`\`\``, inline: true }
                     )
@@ -130,7 +130,7 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: `clearrole - ${rolename}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.oui}・**__Suppression de ${rolesToDelete.size} rôle(s) effectuez avec succès__**`)
+            .setTitle(`${emoji.oui}・**__Suppression de ${rolesToDelete.size} rôle(s) effectuez avec succès__**`)
             .setDescription(`Un total de **\`${rolesToDelete.size}\`** rôle(s) ayant pour nom **\`${rolename}\`** ont été supprimer avec succès`)
             .setColor('#00FF00')
             .setTimestamp()

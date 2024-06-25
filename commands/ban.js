@@ -1,6 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, ActionRowBuilder, ButtonBuilder, PermissionFlagsBits } = require('discord.js')
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -74,7 +74,7 @@ module.exports.run = async (client, message, args) => {
         new ButtonBuilder()
             .setLabel('Rejoindre le support')
             .setStyle('Link')
-            .setEmoji(emoji.bot.support)
+            .setEmoji(emoji.support)
             .setURL(config.support)
         )
 

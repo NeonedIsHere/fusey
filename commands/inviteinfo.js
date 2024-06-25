@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder } = require('discord.js')
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
                 { name: 'inviteinfo', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
             .setColor('#ff0000')
-            .setTitle(`${emoji.bot.non} · __Vous devez envoyer une invitation__**`)
+            .setTitle(`${emoji.non} · __Vous devez envoyer une invitation__**`)
             .setDescription(`Vous devez envoyer une invitation. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setTimestamp()
             .setFooter(
@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
 
         const no = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('Support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
                 .setAuthor(
                     { name: `inviteinfo - ${invite}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
-                .setTitle(`${emoji.bot.home} · Information sur le serveur`)
+                .setTitle(`${emoji.home} · Information sur le serveur`)
                 .setFields(
                     { name: 'Nom', value: `**\`${guild.name}\`**`, inline: true },
                     { name: 'ID', value: `**\`${guild.id}\`**`, inline: true },
@@ -73,11 +73,11 @@ module.exports.run = async (client, message, args) => {
                 .setAuthor(
                     { name: `inviteinfo - ${invite}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
-                .setTitle(`${emoji.bot.link} · Information sur l'invitation`)
+                .setTitle(`${emoji.link} · Information sur l'invitation`)
                 .setFields(
                     { name: 'Salon', value: `**\`${invite.channel.name}\`**`, inline: true },
                     { name: 'Type', value: `**\`${channelType[invite.channel.type]}\`**`, inline: true },
-                    { name: 'NSFW', value: invite.channel.nsfw ? `**${emoji.bot.oui} \`Oui\`**` : `${emoji.bot.non} **\`Non\`**`, inline: true }
+                    { name: 'NSFW', value: invite.channel.nsfw ? `**${emoji.oui} \`Oui\`**` : `${emoji.non} **\`Non\`**`, inline: true }
                 )
                 .setColor('#EF8FB5')
                 .setTimestamp()
@@ -116,8 +116,8 @@ module.exports.run = async (client, message, args) => {
                     .setCustomId('selct')
                     .setDisabled(state)
                     .setOptions(
-                        { label: 'Informations sur le serveur', value: 'serverinviteinfo', emoji: emoji.bot.home },
-                        { label: 'information sur l\'invitation', value: 'inviteinfo', emoji: emoji.bot.link }
+                        { label: 'Informations sur le serveur', value: 'serverinviteinfo', emoji: emoji.home },
+                        { label: 'information sur l\'invitation', value: 'inviteinfo', emoji: emoji.link }
                     )
             )
         }
@@ -155,7 +155,7 @@ module.exports.run = async (client, message, args) => {
                     { name: 'userinfo', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
                 )
                 .setColor('#FF0000')
-                .setTitle(`${emoji.bot.non} · **__Cette invitation est invalide__**`)
+                .setTitle(`${emoji.non} · **__Cette invitation est invalide__**`)
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setTimestamp()
                 .setFooter(
@@ -165,7 +165,7 @@ module.exports.run = async (client, message, args) => {
             const no = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
                     .setLabel('Support')
-                    .setEmoji(emoji.bot.support)
+                    .setEmoji(emoji.support)
                     .setStyle(ButtonStyle.Link)
                     .setURL(config.support)
             )

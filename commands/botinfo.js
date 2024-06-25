@@ -1,7 +1,7 @@
 const { EmbedBuilder, StringSelectMenuBuilder, ActionRowBuilder, ButtonBuilder,} = require('discord.js')
 const Discord = require('discord.js')
+const emoji = require('../emoji/utils/bot.json')
 const pckg = require('../package.json')
-const emoji = require('../emoji.json')
 const os = require('os')
 
 module.exports.run = async (client, message, args) => {
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: `botinfo`, iconURL: client.user.displayAvatarURL({ dynamic: true })}
         )
-        .setTitle(`${emoji.bot.home} ・**__Accueil__**`)
+        .setTitle(`${emoji.home} ・**__Accueil__**`)
         .setDescription(`Merci d'avoir ajouter ${client.user} sur votre serveur discord.\n\n${client.user} à commancer a être développer il y maintenant <t:1714721640:R> (le <t:1714721640:d>) et il été imaginé et développer par ${pckg.author} à la suite d'une idée de développer un bot 100% gratuit et qui contiens tout ceux dont un bot à besoins.\n\nVous trouverrais si dessous un menu sélecteur qui vous permettra d'avoir des embeds avec différente information.\n\nEn cas de problème avec le bot, n'hésiter pas a rejoindre le serveur support`)
         .setColor('#EF8FB5')
         .setTimestamp()
@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'botinfo', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.bot}・**__Identité__**`)
+        .setTitle(`${emoji.bot}・**__Identité__**`)
         .setFields(
             { name: 'Nom', value: `**${client.user} \`${client.user.tag}\`**`, inline: true },
             { name: 'ID', value: `**\`${client.user.id}\`**`, inline: true },
@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: 'botinfo', iconURL: client.user.displayAvatarURL({ dynamic: true })}
         )
-        .setTitle(`${emoji.bot.membre}・**__Développeur__**`)
+        .setTitle(`${emoji.membre}・**__Développeur__**`)
         .setFields(
             { name: 'Nom', value: '**<@1055826086157615114> @neonedishere\n<@1209259539078058066> @atlasatm**', inline: true },
             { name: 'ID', value: '**`1055826086157615114`\n`1209259539078058066\`**', inline: true },
@@ -104,11 +104,11 @@ module.exports.run = async (client, message, args) => {
                .setCustomId("botinfo-menu")
                .setPlaceholder('Choisissez une option')
                .addOptions(
-                    { label: 'Accueil', value: 'bothome', emoji: emoji.bot.home },
-                    { label: 'Identité', value: 'botidentity', emoji: emoji.bot.bot },
-                    { label: 'Développeur', value: 'botdev', emoji: emoji.bot.membre },
-                    { label: 'Statistique', value: 'botstats', emoji: emoji.bot.info },
-                    { label: 'Information technique', value: 'bottech', emoji: emoji.bot.config }
+                    { label: 'Accueil', value: 'bothome', emoji: emoji.home },
+                    { label: 'Identité', value: 'botidentity', emoji: emoji.bot },
+                    { label: 'Développeur', value: 'botdev', emoji: emoji.membre },
+                    { label: 'Statistique', value: 'botstats', emoji: emoji.info },
+                    { label: 'Information technique', value: 'bottech', emoji: emoji.config }
                 )
         )
     ]

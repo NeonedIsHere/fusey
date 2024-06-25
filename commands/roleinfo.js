@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js')
 const config = require('../config.json')
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 
 const permissions = {
     'Administrator' : 'Administrateur',
@@ -46,8 +46,8 @@ module.exports.run = async (client, message, args) => {
             .setAuthor(
                 { name: 'roleinfo', iconURL: client.user.displayAvatarURL({ dynamic: true }) }
             )
-            .setTitle(`${emoji.bot.non} · **__Veuillez mentionner un rôle__**`)
-            .setDescription(`Vous devez envoyer une invitation. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
+            .setTitle(`${emoji.non} · **__Veuillez mentionner un rôle__**`)
+            .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#FF0000')
             .setTimestamp()
             .setFooter(
@@ -67,15 +67,15 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: `roleinfo - @${role.name}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.membre} · **__Information sur le rôles__**`)
+        .setTitle(`${emoji.membre} · **__Information sur le rôles__**`)
         .setFields(
             { name: 'Nom', value: `** ${role} \`@${role.name}\`**`, inline: true },
             { name: 'ID', value: `**\`${role.id}\`**`, inline: true },
             { name: 'Date de création', value: `**<t:${parseInt(role.createdAt / 1000)}:f> (<t:${parseInt(role.createdAt / 1000)}:R>)**`, inline: true },
             { name: 'Couleur', value: `**\`${role.color}\`**`, inline: true },
             { name: 'Position', value: `**\`${role.position}/${message.guild.roles.cache.size}\`**`, inline: true },
-            { name: 'Affiché séparement', value: role.hoist ? `**${emoji.bot.oui} \`Oui\`**` : `**${emoji.bot.non} \`Non\`**`, inline: true },
-            { name: 'Mentionnable', value: role.mentionable ? `**${emoji.bot.oui} \`Oui\`**` : `**${emoji.bot.non} \`Non\`**`, inline: true }
+            { name: 'Affiché séparement', value: role.hoist ? `**${emoji.oui} \`Oui\`**` : `**${emoji.non} \`Non\`**`, inline: true },
+            { name: 'Mentionnable', value: role.mentionable ? `**${emoji.oui} \`Oui\`**` : `**${emoji.non} \`Non\`**`, inline: true }
         )
         .setColor('#EF8FB5')
         .setTimestamp()
@@ -87,12 +87,12 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(
             { name: `roleinfo - @${role.name}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`${emoji.bot.config}・**__Information avancer__**`)
+        .setTitle(`${emoji.config}・**__Information avancer__**`)
         .setFields(
-            { name: 'Administrateur', value: role.permissions.toArray().includes('Administrator') ? `**${emoji.bot.oui} \`Oui\`**` : `**${emoji.bot.non} \`Non\`**`, inline: true },
+            { name: 'Administrateur', value: role.permissions.toArray().includes('Administrator') ? `**${emoji.oui} \`Oui\`**` : `**${emoji.non} \`Non\`**`, inline: true },
             { name: 'Membre ayant ce rôle', value: `**\`${role.members.size || "0"}\`**`, inline: true },
-            { name: 'Rôles d\'intégration', value: role.managed ? `**${emoji.bot.oui} \`Oui\`**` : `**${emoji.bot.non} \`Non\`**`, inline: true },
-            { name: 'Rôles booster', value: role.managed ? `**${emoji.bot.oui}\`Oui\`` : `${emoji.bot.non} **\`Non\`**`,inline: true },
+            { name: 'Rôles d\'intégration', value: role.managed ? `**${emoji.oui} \`Oui\`**` : `**${emoji.non} \`Non\`**`, inline: true },
+            { name: 'Rôles booster', value: role.managed ? `**${emoji.oui}\`Oui\`` : `${emoji.non} **\`Non\`**`,inline: true },
             { name: 'Permission', value: finalPermissions.length !== 0 ? `**\`\`\`yaml\n${finalPermissions.join(', \n')}\`\`\`**` : `Aucune`, inline: false }
         )
         .setColor('#EF8FB5')
@@ -108,8 +108,8 @@ module.exports.run = async (client, message, args) => {
                 .setCustomId('roleinfo-menu')
                 .setDisabled(state)
                 .setOptions(
-                    { label: 'Informations sur le rôles', value: 'roleinfo', emoji: emoji.bot.membre},
-                    { label: 'Informations avancer', value: 'AdRoleInfo', emoji: emoji.bot.config }
+                    { label: 'Informations sur le rôles', value: 'roleinfo', emoji: emoji.membre},
+                    { label: 'Informations avancer', value: 'AdRoleInfo', emoji: emoji.config }
                 )
         )
     ]

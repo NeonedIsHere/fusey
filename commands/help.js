@@ -1,6 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle } = require('discord.js')
 const config = require('../config.json');
-const emoji = require("../emoji.json")
+const emoji = require('../emoji/utils/bot.json')
 
 module.exports.run = async (client, message, args) => {
 
@@ -81,9 +81,9 @@ module.exports.run = async (client, message, args) => {
             .setPlaceholder("Sélectionne une catégorie")
             .setDisabled(state)
             .addOptions(
-                { label: "Autre", value: 'autre', description: "Voir les commande autre.", emoji: emoji.bot.general },
-                { label: "Information", value: "info", description: "Voir les commandes information.", emoji: emoji.bot.info },
-                { label: "Modération", value: "mod", description: "Voir les commandes modération.", emoji: emoji.bot.mod },
+                { label: "Autre", value: 'autre', description: "Voir les commande autre.", emoji: emoji.general },
+                { label: "Information", value: "info", description: "Voir les commandes information.", emoji: emoji.info },
+                { label: "Modération", value: "mod", description: "Voir les commandes modération.", emoji: emoji.mod },
             )
         ),
         new ActionRowBuilder().addComponents(
@@ -91,13 +91,13 @@ module.exports.run = async (client, message, args) => {
                 .setCustomId('home')
                 .setStyle(ButtonStyle.Primary)
                 .setLabel('Accueil')
-                .setEmoji(emoji.bot.home)
+                .setEmoji(emoji.home)
                 .setDisabled(state),
             new ButtonBuilder()
                 .setURL(config.support)
                 .setLabel('Serveur support')
                 .setStyle(ButtonStyle.Link)
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
         )
     ];
 

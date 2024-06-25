@@ -1,6 +1,6 @@
 const { PermissionFlagsBits, PermissionsBitField, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const config = require('../config.json');
-const emoji = require('../emoji.json');
+const emoji = require('../emoji/utils/bot.json');
 
 module.exports.run = async (client, message, args) => {
 
@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
         const flop = new EmbedBuilder()
             .setAuthor({ name: 'renew - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-            .setTitle(`${emoji.bot.non}・**__Vous n'avez pas les permissions nécessaires pour effectuer cette commande__**`)
+            .setTitle(`${emoji.non}・**__Vous n'avez pas les permissions nécessaires pour effectuer cette commande__**`)
             .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setFields({ name: 'Permission(s) manquante', value: `\`\`\`yaml\n- Gérer les salons\`\`\`` })
             .setColor('#FF0000')
@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
-                .setEmoji(emoji.bot.support)
+                .setEmoji(emoji.support)
                 .setLabel('support')
                 .setStyle(ButtonStyle.Link)
                 .setURL(config.support)
@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
             // Send the confirmation message in the cloned channel
             const yes = new EmbedBuilder()
                 .setAuthor({ name: 'renew', iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-                .setTitle(`${emoji.bot.oui}・**__Salon recréé__**`)
+                .setTitle(`${emoji.oui}・**__Salon recréé__**`)
                 .setDescription(`Le salon ${channel2} a été recréé avec succès`)
                 .setColor('#00FF00')
                 .setTimestamp()
@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
 
             const flop = new EmbedBuilder()
                 .setAuthor({ name: 'renew - error', iconURL: client.user.displayAvatarURL({ dynamic: true }) })
-                .setTitle(`${emoji.bot.non}・**__Impossible de recréer le salon des règles de la communauté__**`)
+                .setTitle(`${emoji.non}・**__Impossible de recréer le salon des règles de la communauté__**`)
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setColor('#FF0000')
                 .setTimestamp()
@@ -59,7 +59,7 @@ module.exports.run = async (client, message, args) => {
 
             const flopButton = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setEmoji(emoji.bot.support)
+                    .setEmoji(emoji.support)
                     .setLabel('support')
                     .setStyle(ButtonStyle.Link)
                     .setURL(config.support)
