@@ -1,0 +1,20 @@
+2024-06-25T09:23:55.944Z [error] : Uncaught Exception Monitor/Catch Cannot read properties of undefined (reading '0') {
+  "stack": "TypeError: Cannot read properties of undefined (reading '0')\n    at InteractionCollector.<anonymous> (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\commands\\botinfo.js:125:31)\n    at InteractionCollector.emit (node:events:532:35)\n    at InteractionCollector.handleCollect (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\node_modules\\discord.js\\src\\structures\\interfaces\\Collector.js:133:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "origin": "uncaughtException"
+}
+
+2024-06-25T09:23:55.946Z [error] : Uncaught Exception/Catch Cannot read properties of undefined (reading '0') {
+  "stack": "TypeError: Cannot read properties of undefined (reading '0')\n    at InteractionCollector.<anonymous> (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\commands\\botinfo.js:125:31)\n    at InteractionCollector.emit (node:events:532:35)\n    at InteractionCollector.handleCollect (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\node_modules\\discord.js\\src\\structures\\interfaces\\Collector.js:133:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "origin": "uncaughtException"
+}
+
+2024-06-25T09:23:55.948Z [error] : Uncaught Exception Monitor/Catch Cannot read properties of undefined (reading '0') {
+  "stack": "TypeError: Cannot read properties of undefined (reading '0')\n    at InteractionCollector.<anonymous> (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\commands\\channelinfo.js:92:31)\n    at InteractionCollector.emit (node:events:532:35)\n    at InteractionCollector.handleCollect (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\node_modules\\discord.js\\src\\structures\\interfaces\\Collector.js:133:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "origin": "uncaughtException"
+}
+
+2024-06-25T09:23:55.950Z [error] : Uncaught Exception/Catch Cannot read properties of undefined (reading '0') {
+  "stack": "TypeError: Cannot read properties of undefined (reading '0')\n    at InteractionCollector.<anonymous> (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\commands\\channelinfo.js:92:31)\n    at InteractionCollector.emit (node:events:532:35)\n    at InteractionCollector.handleCollect (C:\\Users\\Neoned\\Desktop\\Dev\\src\\fusey-main\\node_modules\\discord.js\\src\\structures\\interfaces\\Collector.js:133:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "origin": "uncaughtException"
+}
+

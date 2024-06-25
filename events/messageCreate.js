@@ -1,5 +1,5 @@
 const config = require("../config.json")
-const emoji = require('../emoji.json')
+const emoji = require('../emoji/utils/bot.json')
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ActivityType } = require('discord.js')
 
 module.exports = (client, message) => {
@@ -8,7 +8,7 @@ module.exports = (client, message) => {
         .setAuthor(
             { name: `Besoin d'aide ?`, iconURL: client.user.displayAvatarURL({ dynamic: true }) }
         )
-        .setTitle(`Mon prefixe est ${config.prefix}`)
+        .setTitle(`${emoji.info}・Mon prefixe est ${config.prefix}`)
         .setDescription(`Vous pouvez également utilisez la commande **\`${config.prefix}help\`** pour afficher le menu d'aide intéractif.`)
         .setFooter(
             {
@@ -22,11 +22,11 @@ module.exports = (client, message) => {
         new ButtonBuilder()
            .setLabel("Inviter le bot")
            .setStyle("Link")
-           .setEmoji(emoji.bot.link)
+           .setEmoji(emoji.link)
            .setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`),
         new ButtonBuilder()
             .setLabel('Rejoindre le support')
-           .setEmoji(emoji.bot.support)
+           .setEmoji(emoji.support)
            .setStyle('Link')
            .setURL(config.support)
     )
