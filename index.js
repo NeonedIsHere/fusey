@@ -65,7 +65,6 @@ fs.readdir("./events", (_err, files) => {
         const event = require(`./events/${file}`);
         let eventName = file.split(".")[0];
         console.log(`[EVENT] ✨ > ${eventName} > loaded!`);
-        infoLogger.info(`[EVENT] ✨ > ${eventName} > loaded!`);
         client.on(eventName, event.bind(null, client));
         delete require.cache[require.resolve(`./events/${file}`)];
     });
@@ -83,14 +82,12 @@ fs.readdir("./commands", (_err, files) => {
             ...props
         });
         console.log(`[COMMAND] 🌐 > ${commandName} > loaded!`);
-        infoLogger.info(`[COMMAND] 🌐 > ${commandName} > loaded!`);
     });
 });
 
 client.once("ready", () => {
-    const startupMessage = `[STATUS] 🤖 > ${client.user.tag}  > En ligne.\n[LINK] 🔗 > Liens d'invitation > https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot\n[LINK] 🔗 > Liens du support > ${config.support}`;
+    const startupMessage = `[STATUS] 🤖 > ${client.user.tag}  > En ligne\n[LINK] 🔗 > Liens d'invitation > https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot\n[LINK] 🔗 > Liens du support > ${config.support}`;
     console.log(startupMessage);
-    infoLogger.info(startupMessage);
 });
 
 // Redirection des logs de console vers le fichier log.txt
