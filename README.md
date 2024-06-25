@@ -32,13 +32,13 @@ Ce bot Discord est conçu pour offrir diverses fonctionnalités telles que la mo
 
 2. Installez les dépendances :
 
-    ```bash
+    ```sh
     npm install discord.js os winstone
     ```
 
 3. Lancez le bot :
 
-    ```bash
+    ```sh
     node index.js
     ```
 
