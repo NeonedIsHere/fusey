@@ -1,7 +1,7 @@
 # Fus-&
 
 ![License](https://img.shields.io/github/license/NeonedIsHere/fusey)
-![Node.js](https://img.shields.io/badge/node.js-v14.0.0-blue)
+![Node.js](https://img.shields.io/badge/node.js-v22.3.0-blue)
 
 ## Description
 
