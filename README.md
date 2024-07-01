@@ -33,7 +33,7 @@ Ce bot Discord est conçu pour offrir diverses fonctionnalités telles que la mo
 2. Installez les dépendances :
 
     ```bash
-    npm install discord.js os 
+    npm install discord.js os mysql winston moment
     ```
 
 3. Lancez le bot :
