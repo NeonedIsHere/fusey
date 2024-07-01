@@ -48,13 +48,20 @@ Modifiez le fichier `config.json` pour personnaliser le bot selon vos besoins. V
 
 ```json
 {
-    "token" : "MTIyMDMzMjg5MjQ5NzEyMTI5MQ.GzdxcV.kPvohG2absdsu-AotV3kEfjOU0Kh4KGFu5RFW0",
-    "prefix" : "$",
-    "support" : "https://discord.com/invite/jekhYmtNvD",
+    "token" : "",
+    "prefix" : "",
+    "support" : "",
     "devId" : [
-        "1055826086157615114",
-        "1209259539078058066"
-    ]
+        "",
+    ],
+    "BDD": {
+        "host": "",
+        "port": "",
+        "user": "",
+        "password": "",
+        "database": "",
+        "charset": ""
+    }
 }
 ```
 
