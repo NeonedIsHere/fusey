@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         )
         .setFooter(
             {
-                text: `Demander par ${message.author.username}`,
+                text: `Demander par ${message.author.displayName}`,
                 iconURL: message.author.displayAvatarURL()
             }
         )

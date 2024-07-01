@@ -1,6 +1,6 @@
 const config = require("../config.json")
 const emoji = require('../emoji/utils/bot.json')
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ActivityType } = require('discord.js')
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ActivityType, ButtonStyle } = require('discord.js')
 
 module.exports = (client, message) => {
 
@@ -12,7 +12,7 @@ module.exports = (client, message) => {
         .setDescription(`Vous pouvez également utilisez la commande **\`${config.prefix}help\`** pour afficher le menu d'aide intéractif.`)
         .setFooter(
             {
-                text: ` Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true })
+                text: ` Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true })
             }
         )
         .setColor('#EF8FB5')
@@ -21,13 +21,13 @@ module.exports = (client, message) => {
     const invite = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
            .setLabel("Inviter le bot")
-           .setStyle("Link")
+           .setStyle(ButtonStyle.Link)
            .setEmoji(emoji.link)
            .setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`),
         new ButtonBuilder()
             .setLabel('Rejoindre le support')
            .setEmoji(emoji.support)
-           .setStyle('Link')
+           .setStyle(ButtonStyle.Link)
            .setURL(config.support)
     )
 
@@ -42,14 +42,24 @@ module.exports = (client, message) => {
     const activities = [
         {
             name: 'Bot bêta de @Fus-&#1827',
-            type: ActivityType.Custom,
-            url: 'https://www.twitch.tv/zeus1337',
+            type: ActivityType.Streaming,
+            url: 'https://www.twitch.tv/#',
         },
         {
-            name: `By neonedishere`,
-            type: ActivityType.Custom,
-            url: 'https://www.twitch.tv/zeus1337',
+            name: `By neonedishere & atlasatm`,
+            type: ActivityType.Streaming,
+            url: 'https://www.twitch.tv/#',
         },
+        {
+            name: `La v1 sort Bientôt`,
+            type: ActivityType.Streaming,
+            url: 'https://www.twitch./#'
+        },
+        {
+            name: `Dev with ❤️`,
+            type: ActivityType.Streaming,
+            url: 'https://www.twitch.tv/#'
+        }
     ];
     let actualActivity = 0;
     setInterval(async () => {

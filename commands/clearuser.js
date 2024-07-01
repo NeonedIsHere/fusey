@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
             .setColor('#FF0000')
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             )
 
         const flopButton = new ActionRowBuilder().addComponents(
@@ -45,7 +45,7 @@ module.exports.run = async (client, message, args) => {
                 .setColor('#FF0000')
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                 )
 
             const flopButton = new ActionRowBuilder().addComponents(
@@ -75,7 +75,7 @@ module.exports.run = async (client, message, args) => {
                 .setColor('#FF0000')
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                 )
 
             const flopButton = new ActionRowBuilder().addComponents(
@@ -102,7 +102,7 @@ module.exports.run = async (client, message, args) => {
                 .setColor('#FF0000')
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                 )
 
             const flopButton = new ActionRowBuilder().addComponents(
@@ -128,7 +128,7 @@ module.exports.run = async (client, message, args) => {
             .setColor('#ffb000')
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             )
 
         const yesButton = new ButtonBuilder()
@@ -178,7 +178,7 @@ module.exports.run = async (client, message, args) => {
                         .setColor('#00ABFF')
                         .setTimestamp()
                         .setFooter(
-                            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                         )
                         await interaction.channel.send({ embeds: [progress] })
 
@@ -208,7 +208,7 @@ module.exports.run = async (client, message, args) => {
                             .setColor('#00ff00')
                             .setTimestamp()
                             .setFooter(
-                                { text: `Demande par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                                { text: `Demande par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                             )
 
                         await message.channel.send({ embeds: [Success] })
@@ -229,7 +229,7 @@ module.exports.run = async (client, message, args) => {
                     .setColor('#FF0000')
                     .setTimestamp()
                     .setFooter(
-                        { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true })}
+                        { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true })}
                     )
 
                     await interaction.update({ embeds: [cancel], components: msg.components })

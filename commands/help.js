@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
         )
         .setTimestamp()
         .setFooter({
-            text: `Demander par ${message.author.username}`,
+            text: `Demander par ${message.author.displayName}`,
             iconURL: message.author.displayAvatarURL({ dynamic: true })
         });
 
@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('#EF8FB5')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
         )
 
     const info = new EmbedBuilder()
@@ -54,7 +54,7 @@ module.exports.run = async (client, message, args) => {
         )
         .setTimestamp()
         .setFooter({
-            text: `Demander par ${message.author.username}`,
+            text: `Demander par ${message.author.displayName}`,
             iconURL: message.author.displayAvatarURL({ dynamic: true })
         })
 
@@ -70,7 +70,7 @@ module.exports.run = async (client, message, args) => {
     )
     .setTimestamp()
     .setFooter({
-        text: `Demander par ${message.author.username}`,
+        text: `Demander par ${message.author.displayName}`,
         iconURL: message.author.displayAvatarURL()
     });
 

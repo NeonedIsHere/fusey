@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
             .setColor('#FF0000')
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             )
         return message.reply({ embeds: [flop] })
     }
@@ -80,7 +80,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('#EF8FB5')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
         )
 
     const AdRoleInfo = new EmbedBuilder()
@@ -98,7 +98,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('#EF8FB5')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
         )
 
     const selct = (state) => [

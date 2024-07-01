@@ -10,7 +10,10 @@
   "description": "",
   "dependencies": {
     "discord.js": "^14.15.2",
+    "moment": "^2.30.1",
+    "mysql": "^2.18.1",
     "os": "^0.1.2",
-    "pwss": "^1.0.6"
+    "pwss": "^1.0.6",
+    "winston": "^3.13.0"
   }
 }

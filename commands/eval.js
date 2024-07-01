@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
             )
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             )
 
         message.channel.send({ embeds: [embed] })
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
             )
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             )
 
         message.channel.send({ embeds: [embed] });

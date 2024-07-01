@@ -5,5 +5,13 @@
     "devId" : [
         "1055826086157615114",
         "1209259539078058066"
-    ]
+    ],
+    "BDD": {
+        "host": "212.132.121.136",
+        "port": "3306",
+        "user": "root",
+        "password": "Neoned.Root",
+        "database": "fusey",
+        "charset": "utf8mb4"
+    }
 }

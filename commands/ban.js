@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed2 = new EmbedBuilder()
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
        .setColor('Random')
        .setTimestamp()
        .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed3 = new EmbedBuilder()
@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
     
     const embed4 = new EmbedBuilder()
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
        .setColor('Random')
        .setTimestamp()
        .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed5 = new EmbedBuilder()
@@ -67,7 +67,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const support = new ActionRowBuilder().addComponents(
@@ -93,7 +93,7 @@ module.exports.run = async (client, message, args) => {
 
 
     try {
-        await member.ban({ reason: `A été banni par ${message.author.username}`})
+        await member.ban({ reason: `A été banni par ${message.author.displayName}`})
         message.channel.send({ embeds: [embed] })
     } catch (error) {
         console.error(error)

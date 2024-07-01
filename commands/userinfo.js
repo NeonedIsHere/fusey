@@ -1,5 +1,6 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder } = require('discord.js');
 const emoji = require('../emoji/utils/bot.json');
+const badge = require('../Emoji/utils/badge.json')
 const config = require('../config.json');
 
 module.exports.run = async (client, message, args) => {
@@ -18,18 +19,18 @@ module.exports.run = async (client, message, args) => {
         }
 
         const flags = {
-            Staff: emoji.badge.staff,
-            Partner: emoji.badge.partner,
-            BugHunterLevel1: emoji.badge.bughunter1,
-            BugHunterLevel2: emoji.badge.bughunter2,
-            Hypesquad: emoji.badge.hypesquad,
-            HypeSquadOnline1: emoji.badge.h1,
-            HypeSquadOnline2: emoji.badge.h2,
-            HypeSquadOnline3: emoji.badge.h3,
-            PremiumEaelySupporter: emoji.badge.premium,
-            VerifiedDeveloper: emoji.badge.developer,
-            ActiveDeveloper: emoji.badge.activedev,
-            CertifiedModerator: emoji.badge.certifiedmod
+            Staff: badge.staff,
+            Partner: badge.partner,
+            BugHunterLevel1: badge.bughunter1,
+            BugHunterLevel2: badge.bughunter2,
+            Hypesquad: badge.hypesquad,
+            HypeSquadOnline1: badge.h1,
+            HypeSquadOnline2: badge.h2,
+            HypeSquadOnline3: badge.h3,
+            PremiumEaelySupporter: badge.premium,
+            VerifiedDeveloper: badge.developer,
+            ActiveDeveloper: badge.activedev,
+            CertifiedModerator: badge.certifiedmod
         };
 
         let userFlags;
@@ -47,7 +48,7 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`Merci de mentionner un utilisateur valide. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setColor('#ff0000')
             .setTimestamp()
-            .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+            .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
 
         const ButtonSupport = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
@@ -73,7 +74,7 @@ module.exports.run = async (client, message, args) => {
             .setColor("#EF8FB5")
             .setTimestamp()
             .setThumbnail(user.displayAvatarURL({ dynamic: true }))
-            .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
+            .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
             .setImage(bannerURL);
 
         const userServerInfo = new EmbedBuilder()
@@ -85,7 +86,7 @@ module.exports.run = async (client, message, args) => {
             )
             .setColor("#EF8FB5")
             .setTimestamp()
-            .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+            .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
 
         const button1 = new ButtonBuilder()
             .setStyle(ButtonStyle.Link)

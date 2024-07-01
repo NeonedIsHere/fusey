@@ -1,7 +1,7 @@
 # Fus-&
 
-![License](https://img.shields.io/github/license/NeonedIsHere/fusey)
-![Node.js](https://img.shields.io/badge/node.js-v22.3.0-blue)
+![License](https://img.shields.io/github/license/votre-utilisateur/votre-repo)
+![Node.js](https://img.shields.io/badge/node.js-v14.0.0-blue)
 
 ## Description
 
@@ -33,7 +33,7 @@ Ce bot Discord est conçu pour offrir diverses fonctionnalités telles que la mo
 2. Installez les dépendances :
 
     ```bash
-    npm install discord.js os winstone moment mongoose
+    npm install discord.js os 
     ```
 
 3. Lancez le bot :
@@ -48,11 +48,12 @@ Modifiez le fichier `config.json` pour personnaliser le bot selon vos besoins. V
 
 ```json
 {
-    "token" : "ton token",
-    "prefix" : "ton prefix",
-    "support" : "ton lien",
+    "token" : "MTIyMDMzMjg5MjQ5NzEyMTI5MQ.GzdxcV.kPvohG2absdsu-AotV3kEfjOU0Kh4KGFu5RFW0",
+    "prefix" : "$",
+    "support" : "https://discord.com/invite/jekhYmtNvD",
     "devId" : [
-        "TON ID"
+        "1055826086157615114",
+        "1209259539078058066"
     ]
 }
 ```

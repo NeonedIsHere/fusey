@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
             { name: 'Vanity URL', value: guild.vanityURLCode ? `**[.gg/${guild.vanityURLCode}](https://discord.com/invite/${guild.vanityURLCode})**` : "**\`Non définie\`**" }
         )
         .setTimestamp()
-        .setFooter({ text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() })
+        .setFooter({ text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() })
 
     const serverstats = new EmbedBuilder()
         .setAuthor({ name: `serveinfo - ${guild.name}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
         )
         .setTimestamp()
         .setColor('#EF8FB5')
-        .setFooter({ text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
+        .setFooter({ text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) })
 
     const button1 = new ButtonBuilder()
         .setStyle(ButtonStyle.Link)

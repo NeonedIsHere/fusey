@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
             .setFields({ name: 'Permission(s) manquante', value: `\`\`\`yaml\n- Gérer les salons\`\`\`` })
             .setColor('#FF0000')
             .setTimestamp()
-            .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+            .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
 
         const flopButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
@@ -32,7 +32,7 @@ module.exports.run = async (client, message, args) => {
             await message.channel.delete();
 
             // Clone the channel
-            const channel2 = await message.channel.clone({ reason: `Salon recréé par ${message.author.username}` });
+            const channel2 = await message.channel.clone({ reason: `Salon recréé par ${message.author.displayName}` });
 
             // Send the confirmation message in the cloned channel
             const yes = new EmbedBuilder()
@@ -41,7 +41,7 @@ module.exports.run = async (client, message, args) => {
                 .setDescription(`Le salon ${channel2} a été recréé avec succès`)
                 .setColor('#00FF00')
                 .setTimestamp()
-                .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+                .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
 
             await channel2.send({ content: message.author.toString(), embeds: [yes] }).then(m => setTimeout(() => m.delete(), 7500));
 
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setColor('#FF0000')
                 .setTimestamp()
-                .setFooter({ text: `Demandé par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+                .setFooter({ text: `Demandé par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
 
             const flopButton = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()

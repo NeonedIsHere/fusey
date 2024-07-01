@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`Vous devez envoyer une invitation. En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
             .setTimestamp()
             .setFooter(
-                { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
             );
 
         const no = new ActionRowBuilder().addComponents(
@@ -66,7 +66,7 @@ module.exports.run = async (client, message, args) => {
                 .setImage(guild.bannerURL({ dynamic: true, size: 2048 }))
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                 )
 
             const InviteInfo = new EmbedBuilder()
@@ -82,7 +82,7 @@ module.exports.run = async (client, message, args) => {
                 .setColor('#EF8FB5')
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
                 )
 
         const button1 = new ButtonBuilder()
@@ -159,7 +159,7 @@ module.exports.run = async (client, message, args) => {
                 .setDescription(`En cas d'erreur, merci de le communiquer au développeur en rejoignant le **[support](${config.support})** ou en cliquant sur le bouton **\`support\`** ci-dessous`)
                 .setTimestamp()
                 .setFooter(
-                    { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true}) }
+                    { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true}) }
                 )
             
             const no = new ActionRowBuilder().addComponents(

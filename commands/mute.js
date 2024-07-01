@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed2 = new EmbedBuilder()
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
        .setColor('Random')
        .setTimestamp()
        .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed3 = new EmbedBuilder()
@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
     
     const embed4 = new EmbedBuilder()
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
        .setColor('Random')
        .setTimestamp()
        .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const embed5 = new EmbedBuilder()
@@ -67,7 +67,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) }
         )
         
     const embed6 = new EmbedBuilder()
@@ -79,7 +79,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('Random')
         .setTimestamp()
         .setFooter(
-            { text: `Demander par ${message.author.username}`, iconURL: message.author.displayAvatarURL() }
+            { text: `Demander par ${message.author.displayName}`, iconURL: message.author.displayAvatarURL() }
         )
 
     const support = new ActionRowBuilder().addComponents(
