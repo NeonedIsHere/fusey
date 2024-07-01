@@ -1,17 +1,16 @@
 {
-    "token" : "MTIyMDMzMjg5MjQ5NzEyMTI5MQ.GzdxcV.kPvohG2absdsu-AotV3kEfjOU0Kh4KGFu5RFW0",
-    "prefix" : "$",
-    "support" : "https://discord.com/invite/jekhYmtNvD",
+    "token" : "",
+    "prefix" : "",
+    "support" : "",
     "devId" : [
-        "1055826086157615114",
-        "1209259539078058066"
+        "",
     ],
     "BDD": {
-        "host": "212.132.121.136",
-        "port": "3306",
-        "user": "root",
-        "password": "Neoned.Root",
-        "database": "fusey",
-        "charset": "utf8mb4"
+        "host": "",
+        "port": "",
+        "user": "",
+        "password": "",
+        "database": "",
+        "charset": ""
     }
 }
